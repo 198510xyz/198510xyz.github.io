@@ -9,5 +9,7 @@
  - [文件上传与分享](http://share.198510.xyz)
  - [RSS阅读器](http://reader.198510.xyz)
  - [看板项目管理](http://project.198510.xyz)
+ - [网站访问统计](http://statistic.198510.xyz)
+ - [在线视频库](http://bd.198510.xyz:23424/mediabrowser)
 
 
