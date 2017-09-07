@@ -16,7 +16,7 @@ rpm -Fhv *.rpm
 已测试通过的系统： Ubuntu 14.04 x64、Ubuntu 16.04 x64、CentOS 6 x64、CentOS 7 x64 只支持 64 位系统，要求 glibc 版本 2.14 以上。
 
 ```
-wget https://raw.githubusercontent.com/198510xyz/shell-scripts/master/ovz-bbr/ovz-bbr-installer.sh
+wget https://raw.githubusercontent.com/kuoruan/shell-scripts/master/ovz-bbr/ovz-bbr-installer.sh
 chmod +x ovz-bbr-installer.sh
 ./ovz-bbr-installer.sh
 ```
