@@ -29,4 +29,5 @@ yum install shadowsocks-libev
 安装完成后，需要调整config.json中的server字段为”0.0.0.0″（如果走IPv6线路，填”::”）
 
 ## 安装客户端
-
+- Mac平台: [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
+- Win平台：[shadowsocks-windows](https://github.com/shadowsocks/shadowsocks-windows/releases)
