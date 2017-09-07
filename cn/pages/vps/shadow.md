@@ -26,7 +26,21 @@ yum update
 yum install shadowsocks-libev
 ```
 
-安装完成后，需要调整config.json中的server字段为”0.0.0.0″（如果走IPv6线路，填”::”）
+安装完成后，需要调整`/etc/shadowsocks-libev/config.json`中的server字段为”0.0.0.0″（如果走IPv6线路，填”::”）
+
+接着启动服务，并设置服务为开机启动，
+
+CentOS6使用：
+```
+chkconfig shadowsocks-libev on
+service shadowsocks-libev start
+```
+CentOS7使用：
+```
+systemctl enable shadowsocks-libev
+systemctl start shadowsocks-libev 
+```
+
 
 ## 安装客户端
 - Mac平台: [ShadowsocksX-NG](https://github.com/shadowsocks/ShadowsocksX-NG/releases)
