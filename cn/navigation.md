@@ -24,6 +24,7 @@
   * # VPS相关笔记
   * [Shadowsocks安装](pages/vps/shadow.md)
   * [ServerSpeeder安装](pages/vps/serverspeed.md)
+
 [关于](pages/about.md)
 
 <!-- A more complex navigation example: ----------------------------------------
