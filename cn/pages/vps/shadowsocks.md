@@ -1,6 +1,6 @@
 # 影梭安装
 
-# Windows安装
+## Windows安装服务端
 
 1. 下载最新的[shadowsocks-libqss](https://github.com/shadowsocks/libQtShadowsocks/releases)（Fedora下软件包名为shadowsocks-libQtShadowsocks）
 2. 准备好config.json文件（[范例文件点此](https://github.com/shadowsocks/libQtShadowsocks/blob/master/shadowsocks-libqss/config.json)，点Raw另存为config.json就能下载下来了），server字段填写”0.0.0.0″（如果走IPv6线路，填”::”），加密方式可以改成更新潮的”chacha20″（老旧的Shadowsocks客户端可能不支持chacha20加密）
@@ -15,4 +15,18 @@
 shadowsocks-libqss.exe -c config.json -S
 ```
 
-# Linux安装
+## Linux安装服务端
+
+### CentOS源安装
+
+下载[Fedora Copr](https://copr.fedorainfracloud.org/coprs/librehat/shadowsocks/)并且放置到/etc/yum.repos.d/，然后通过yum安装：
+
+```
+yum update
+yum install shadowsocks-libev
+```
+
+安装完成后，需要调整config.json中的server字段为”0.0.0.0″（如果走IPv6线路，填”::”）
+
+## 安装客户端
+
