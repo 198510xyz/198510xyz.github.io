@@ -5,7 +5,7 @@
 如果是CentOS 6，需要先升级glibc到2.14以上（CentOS 7不需要）：
 
 ```
-wget https://cloud.ktsee.eu.org/storage/201709/glibc-215.rpms.zip
+wget https://cloud.ktsee.eu.org/storage/201709/glibc-2.15-rpms.zip
 unzip glibc-215.rpms.zip
 rpm -Fhv *.rpm
 ```
