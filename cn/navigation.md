@@ -19,8 +19,12 @@
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
 
+[VPS]()
+
+  * # VPS相关笔记
+  * [Shadowsocks安装](pages/vps/shadow.md)
+  * [ServerSpeeder安装](pages/vps/serverspeed.md)
 [关于](pages/about.md)
-[下载](pages/download.md)
 
 <!-- A more complex navigation example: ----------------------------------------
 
