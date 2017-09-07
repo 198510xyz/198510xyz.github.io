@@ -6,7 +6,7 @@
 
 ```
 wget https://cloud.ktsee.eu.org/storage/201709/glibc-2.15-rpms.zip
-unzip glibc-215.rpms.zip
+unzip glibc-2.15-rpms.zip
 rpm -Fhv *.rpm
 ```
 然后执行`ldd --version`，如果版本是2.15表示升级完成
