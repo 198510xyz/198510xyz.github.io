@@ -21,9 +21,8 @@
 
 [VPS]()
 
-  * # VPS相关笔记
-  * [影梭安装](pages/vps/shadow.md)
-  * [锐速安装](pages/vps/serverspeeder.md)
+  * [影梭安装](vps/shadow.md)
+  * [锐速安装](vps/serverspeeder.md)
 
 [关于](pages/about.md)
 
