@@ -28,7 +28,7 @@ exclude=kernel*
 
 ### OpenVZ架构无法安装锐速的解决
 
-安装bbr
+[安装bbr](vps/openvz-bbr.md)
 
 ## Windows安装锐速
 
