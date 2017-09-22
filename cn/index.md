@@ -11,6 +11,4 @@
  - [看板项目管理](http://project.198510.xyz)
  - [网站访问统计](http://statistic.198510.xyz)
  - [在线视频库](http://bd.198510.xyz:23424/mediabrowser)
- - [在线视频库2](http://cac.198510.xyz:23424/mediabrowser)
-
-
+ - [在线音乐库](http://zl.198510.xyz/music/)
