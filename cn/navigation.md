@@ -19,7 +19,7 @@
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
 
-[VPS技巧]()
+[VPS]()
 
   * [影梭安装](vps/shadow.md)
   * [锐速安装](vps/serverspeeder.md)
