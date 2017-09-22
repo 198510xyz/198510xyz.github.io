@@ -19,10 +19,20 @@
   -- (Read: http://dynalon.github.io/mdwiki/#!quickstart.md#Adding_a_navigation)
   -->
 
-[VPS]()
+[VPS技巧]()
 
   * [影梭安装](vps/shadow.md)
   * [锐速安装](vps/serverspeeder.md)
+  
+[工具]()
+
+  * [文件上传与分享](http://share.198510.xyz)
+  * [RSS阅读器](http://reader.198510.xyz)
+  * [看板项目管理](http://project.198510.xyz)
+  * [网站访问统计](http://statistic.198510.xyz)
+  - - - -
+  * [在线视频库](http://bd.198510.xyz:23424/mediabrowser)
+  * [在线音乐库](http://zl.198510.xyz/music/)
 
 [关于](pages/about.md)
 
