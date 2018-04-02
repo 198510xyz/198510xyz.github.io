@@ -41,7 +41,7 @@
                 var btn = $(".btn span");
                 var imgurl = $('#imgurl');
                 imgurl.hide();
-                $("#fileupload").wrap("<form id='myupload' action='https://x.mouto.org/wb/x.php?up&_r='"+Math.random()+" method='post' enctype='multipart/form-data'></form>");
+                $("#fileupload").wrap("<form id='myupload' action='http://x.mouto.org/wb/x.php?up&_r='"+Math.random()+" method='post' enctype='multipart/form-data'></form>");
                 $("#fileupload").change(function(){
                     $("#myupload").ajaxSubmit({
                         dataType:  'json',
