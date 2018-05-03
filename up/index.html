@@ -65,7 +65,7 @@
                             percent.html(percentVal);
                         },
                         success: function(data) {
-                            var img = "https://ww2.sinaimg.cn/large/"+data.pid+".jpg";
+                            var img = data.data.link;
                             showimg.html("<img src='"+img+"' style='max-width:600px;'>");
                             imgurl.show();
                             $('#imgurl .copyimg').val(img);
