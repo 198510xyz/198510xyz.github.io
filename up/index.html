@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="main.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="jquery.min.js"></script>
-        <script src="https://x.mouto.org/wb/up.itorr.js"></script>
+        <script type="text/javascript" src="jquery.form.min.js"></script>
     </head>
 
     <body>
@@ -20,7 +20,7 @@
                 <p>说明：使用新浪微博提供的图片存储服务，本站无法保证其服务的长期稳定。</p>
                 <div class="btn">
                     <span>上传图片</span>
-                    <input id="fileupload" type="file" name="smfile">
+                    <input id="fileupload" type="file" name="image">
                 </div>
                 <div class="progress">
                     <span class="bar"></span><span class="percent">0%</span >
@@ -41,30 +41,43 @@
                 var btn = $(".btn span");
                 var imgurl = $('#imgurl');
                 imgurl.hide();
+                $("#fileupload").wrap("<form id='myupload' action='https://api.imgur.com/3/image' method='post' enctype='multipart/form-data'></form>");
                 $("#fileupload").change(function(){
-                    showimg.empty();
-                    progress.show();
-                    var percentVal = '0%';
-                    bar.width(percentVal);
-                    percent.html(percentVal);
-                    btn.html("上传中...");
-                    
-                    UP(this.files[0],function(pid){ 
-                        var img = "https://ww2.sinaimg.cn/large/"+pid+".jpg";
-                        showimg.html("<img src='"+img+"' style='max-width:600px;'>");
-                        imgurl.show();
-                        $('#imgurl .copyimg').val(img);
-                        $('#imgurl .copyhtml').val('<img src="'+img+'" />');
-                        btn.html("上传图片");
-                    },function(error){
-                        btn.html("上传失败");
-                        bar.width('0')
-                        files.html(error);
-                    },function(percentFloat){
-                        var percentVal = percentFloat*100 + '%';
-                        bar.width(percentVal);
-                        percent.html(percentVal);
-                    })
+                    $("#myupload").ajaxSubmit({
+                        dataType:  'json',
+                        beforeSubmit: function(arr, $form, options) { 
+                            options.headers = {
+                                'Authorization': 'Client-ID 1e9d0bad8e66dcb',
+                                'Accept': 'application/json'
+                            }
+                        },
+                        beforeSend: function() {
+                            showimg.empty();
+                            progress.show();
+                            var percentVal = '0%';
+                            bar.width(percentVal);
+                            percent.html(percentVal);
+                            btn.html("上传中...");
+                        },
+                        uploadProgress: function(event, position, total, percentComplete) {
+                            var percentVal = percentComplete + '%';
+                            bar.width(percentVal);
+                            percent.html(percentVal);
+                        },
+                        success: function(data) {
+                            var img = "https://ww2.sinaimg.cn/large/"+data.pid+".jpg";
+                            showimg.html("<img src='"+img+"' style='max-width:600px;'>");
+                            imgurl.show();
+                            $('#imgurl .copyimg').val(img);
+                            $('#imgurl .copyhtml').val('<img src="'+img+'" />');
+                            btn.html("上传图片");
+                        },
+                        error:function(xhr){
+                            btn.html("上传失败");
+                            bar.width('0')
+                            files.html(xhr.responseText);
+                        }
+                    });
                 });
                 $('#imgurl input').click(function(){
                     $(this).select();
