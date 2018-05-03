@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="main.css" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="text/javascript" src="jquery.min.js"></script>
-        <script type="text/javascript" src="jquery.form.min.js"></script>
+        <script src="https://x.mouto.org/wb/up.itorr.js"></script>
     </head>
 
     <body>
@@ -41,37 +41,30 @@
                 var btn = $(".btn span");
                 var imgurl = $('#imgurl');
                 imgurl.hide();
-                $("#fileupload").wrap("<form id='myupload' action='https://sm.ms/api/upload' method='post' enctype='multipart/form-data'></form>");
                 $("#fileupload").change(function(){
-                    $("#myupload").ajaxSubmit({
-                        dataType:  'json',
-                        beforeSend: function() {
-                            showimg.empty();
-                            progress.show();
-                            var percentVal = '0%';
-                            bar.width(percentVal);
-                            percent.html(percentVal);
-                            btn.html("上传中...");
-                        },
-                        uploadProgress: function(event, position, total, percentComplete) {
-                            var percentVal = percentComplete + '%';
-                            bar.width(percentVal);
-                            percent.html(percentVal);
-                        },
-                        success: function(data) {
-                            var img = "https://ooo.0o0.ooo"+data.path;
-                            showimg.html("<img src='"+img+"' style='max-width:600px;'>");
-                            imgurl.show();
-                            $('#imgurl .copyimg').val(img);
-                            $('#imgurl .copyhtml').val('<img src="'+img+'" />');
-                            btn.html("上传图片");
-                        },
-                        error:function(xhr){
-                            btn.html("上传失败");
-                            bar.width('0')
-                            files.html(xhr.responseText);
-                        }
-                    });
+                    showimg.empty();
+                    progress.show();
+                    var percentVal = '0%';
+                    bar.width(percentVal);
+                    percent.html(percentVal);
+                    btn.html("上传中...");
+                    
+                    UP(this.files[0],function(pid){ 
+                        var img = "https://ww2.sinaimg.cn/large/"+pid+".jpg";
+                        showimg.html("<img src='"+img+"' style='max-width:600px;'>");
+                        imgurl.show();
+                        $('#imgurl .copyimg').val(img);
+                        $('#imgurl .copyhtml').val('<img src="'+img+'" />');
+                        btn.html("上传图片");
+                    },function(error){
+                        btn.html("上传失败");
+                        bar.width('0')
+                        files.html(error);
+                    },function(percentFloat){
+                        var percentVal = percentFloat*100 + '%';
+                        bar.width(percentVal);
+                        percent.html(percentVal);
+                    })
                 });
                 $('#imgurl input').click(function(){
                     $(this).select();
