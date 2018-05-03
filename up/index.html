@@ -20,7 +20,7 @@
                 <p>说明：使用新浪微博提供的图片存储服务，本站无法保证其服务的长期稳定。</p>
                 <div class="btn">
                     <span>上传图片</span>
-                    <input id="fileupload" type="file" name="file">
+                    <input id="fileupload" type="file" name="smfile">
                 </div>
                 <div class="progress">
                     <span class="bar"></span><span class="percent">0%</span >
@@ -41,7 +41,7 @@
                 var btn = $(".btn span");
                 var imgurl = $('#imgurl');
                 imgurl.hide();
-                $("#fileupload").wrap("<form id='myupload' action='http://x.mouto.org/wb/x.php?up&_r="+Math.random()+"' method='post' enctype='multipart/form-data'></form>");
+                $("#fileupload").wrap("<form id='myupload' action='https://sm.ms/api/upload' method='post' enctype='multipart/form-data'></form>");
                 $("#fileupload").change(function(){
                     $("#myupload").ajaxSubmit({
                         dataType:  'json',
@@ -59,7 +59,7 @@
                             percent.html(percentVal);
                         },
                         success: function(data) {
-                            var img = "https://ww2.sinaimg.cn/large/"+data.pid+".jpg";
+                            var img = "https://ooo.0o0.ooo"+data.path;
                             showimg.html("<img src='"+img+"' style='max-width:600px;'>");
                             imgurl.show();
                             $('#imgurl .copyimg').val(img);
